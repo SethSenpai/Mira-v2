@@ -7,7 +7,7 @@ var authedBooru = new Danbooru({login: loginObj.login, api_key: loginObj.API});
 
 
 //function that exports the whole danbooru pull section
-exports.danPull = function(message, mybot, funcFile, whiteArrayId, blackArrayId)
+exports.danPull = function(message, mybot, funcFile)
 {
 	if(message.content.indexOf("!hentai ") >= 0 && message.content.indexOf("!hentai ") <= 0)
 	{
