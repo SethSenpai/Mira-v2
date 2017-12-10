@@ -50,6 +50,7 @@ client.on('ready', () => {
 		pet.pet(message, client, funcFile, jsonCount, jsonfile, mood);
 		dan.danPull(message, client, funcFile, whiteArrayId, blackArrayId);
 		meme.justMemes(message, client , funcFile);
+		roll.roll(message, client, funcFile, mood);
 
   });
   

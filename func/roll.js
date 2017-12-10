@@ -5,7 +5,7 @@ exports.roll = function (message, mybot, funcFile, mood) {
 	
 	if(message.content.indexOf("!roll ") >= 0 && message.content.indexOf("!roll ") <= 0)
 	{			
-			console.log(funcFile.getDateTime() + " dice requested".cyan + " Name: ".cyan + message.author.name);
+			console.log(funcFile.getDateTime() + " dice requested".cyan + " Name: ".cyan + message.author.username);
 			var diecontainer = message.content.substring(6);
 			var dienumbers = diecontainer.split("d");
 			if (dienumbers.length > 1 && isNaN(parseInt(dienumbers[0])) == false)
@@ -42,17 +42,17 @@ exports.roll = function (message, mybot, funcFile, mood) {
 					
 				if(amount > 100)
 					{
-						mybot.reply(message, "``I don't have that many dice ల(｀°Δ°)``");
+						message.channel.send("``I don't have that many dice ల(｀°Δ°)``");
 						console.log(funcFile.getDateTime() + " Error too many dice".cyan);
 					}
 				else if(isNaN(die) == true)
  					{
-						mybot.reply(message, "``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
+						message.channel.send("``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
 						console.log(funcFile.getDateTime() + " Error no dice specified".cyan);
 					}
 				else if(isNaN(mod) == true && pmmod !== " ")
  					{
-						mybot.reply(message, "``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
+						message.channel.send("``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
 						console.log(funcFile.getDateTime() + " Error no mod specified but +/- was triggered".cyan);
 					}
 					else
@@ -71,13 +71,13 @@ exports.roll = function (message, mybot, funcFile, mood) {
 						{
 							rolltotal = rolltotal;
 							var rngres = Math.floor((Math.random()*2));
-							mybot.reply(message,"``" + mood.getResponse("roll",rngres) + roll + ". Totalling: " + rolltotal + "``");
+							message.channel.send("``" + mood.getResponse("roll",rngres) + roll + ". Totalling: " + rolltotal + "``");
 							console.log(funcFile.getDateTime() + " Rolled ".cyan + roll + ". For a total of ".cyan + rolltotal +"!".cyan);
 						}
 						else
 						{
 						var rngres = Math.floor((Math.random()*2));
-						mybot.reply(message,"``" + mood.getResponse("roll",rngres) + roll + ". With modifier "+pmmod+mod+". Totalling: " + rolltotal + "``");
+						message.channel.send("``" + mood.getResponse("roll",rngres) + roll + ". With modifier "+pmmod+mod+". Totalling: " + rolltotal + "``");
 						//mybot.reply(message, "``I rolled " + roll + ". With modifier "+pmmod+mod+". For a total of " + rolltotal +"! ヾ(´▽｀;)ゝ``");
 						console.log(funcFile.getDateTime() + " Rolled ".cyan + roll + ". With modifier ".cyan+pmmod+mod+". For a total of ".cyan + rolltotal +"!".cyan);
 						}
@@ -87,7 +87,7 @@ exports.roll = function (message, mybot, funcFile, mood) {
 			}
 			else
 			{
-				mybot.reply(message, "``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
+				message.channel.send("``There was an error in your !roll command, please try again. The syntax is !roll [x]d[y][+/-][mod] （’へ’）``");
 			}
 	}
 }
