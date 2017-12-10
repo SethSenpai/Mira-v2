@@ -1,81 +1,69 @@
 exports.justMemes = function(message, mybot , funcFile){
 	//ping command	
-	if(message.content === "pin")
+	if(message.content === "!pin")
 	{
-		mybot.sendMessage(message, "``pon ( ´ ▽ ` )ﾉ``");
-		console.log(funcFile.getDateTime() + " pinged in: ".cyan + message.channel.name + " Name: ".cyan + message.author.name);
-		//mybot.sendMessage("140488117005058048", "extra line")
-	}
-	
-//zeal
-	if(message.content == "!zeal")
-	{
-		mybot.sendMessage(message, "``No, Zeal is not a chef. He just eats out a lot. (that rich bastard) On a serious note, just no time to go home and cook.``");
-		console.log(funcFile.getDateTime() + " zeal questioned. Name: ".cyan + message.author.name);
+		message.channel.send("``pon ( ´ ▽ ` )ﾉ``").then ((msg)=>{
+			//console.log(msg.createdTimestamp);
+			var i = msg.createdTimestamp - message.createdTimestamp;
+			var j = Math.round(mybot.ping);
+			message.channel.send(" ``Latency is "+i+"ms. API Latency is "+j+"ms`` ");	
+		});	
+		console.log(funcFile.getDateTime() + " pinged in: ".cyan + message.channel.name + " Name: ".cyan + message.author.username);	
 	}
 	
 //jail time
 	if(message.content == "!jail")
 	{
-		mybot.sendMessage(message, "https://www.youtube.com/watch?v=XeDM1ZjMK50");
-		console.log(funcFile.getDateTime() + " who's going to jail? Name: ".cyan + message.author.name);
-	}
-
-//fundraiser
-	if(message.content == "!fundraiser")
-	{
-		mybot.sendMessage(message, "https://sethsenpai.github.io/fundRaiser/");
-		console.log(funcFile.getDateTime() + " Fundraiser Name: ".cyan + message.author.name);
+		message.channel.send("https://www.youtube.com/watch?v=XeDM1ZjMK50");
+		console.log(funcFile.getDateTime() + " who's going to jail? Name: ".cyan + message.author.username);
 	}	
-
-//anime
-        if(message.content == "!anime")
-        {
-                mybot.sendMessage(message, "http://puu.sh/r17AO/4b3489b07b.jpg");
-                console.log(funcFile.getDateTime() + " Where are the Anime flikkers? Name: ".cyan + message.author.name);
-        }
-
 	
 //hilko
 	if(message.content == "!hilko")
 	{
-		mybot.sendMessage(message, "http://static4.koken.vtm.be/sites/koken.vtm.be/files/styles/vmmaplayer_big/public/recipe/image/kaasfondue_2.jpg?itok=Fz-TX-HM");
-		console.log(funcFile.getDateTime() + " Where is hilko? Name: ".cyan + message.author.name);
+		message.channel.send("http://static4.koken.vtm.be/sites/koken.vtm.be/files/styles/vmmaplayer_big/public/recipe/image/kaasfondue_2.jpg?itok=Fz-TX-HM");
+		console.log(funcFile.getDateTime() + " Where is hilko? Name: ".cyan + message.author.username);
 	}
 
 //daryll
 	if(message.content == "!daryll")
 	{
-		mybot.sendMessage(message, "http://i.imgur.com/v4ftB0N.png");
-		console.log(funcFile.getDateTime() + " Where is daryll? Name: ".cyan + message.author.name);
+		message.channel.send("http://i.imgur.com/v4ftB0N.png");
+		console.log(funcFile.getDateTime() + " Where is daryll? Name: ".cyan + message.author.username);
 	}
 	
 //seth
 	if(message.content == "!seth")
 	{
-		mybot.sendMessage(message, "http://www.pako-rhenen.nl/uploads/photos/img_0461.jpg");
-		console.log(funcFile.getDateTime() + " Where is seth? Name: ".cyan + message.author.name);
+		message.channel.send("http://www.pako-rhenen.nl/uploads/photos/img_0461.jpg");
+		console.log(funcFile.getDateTime() + " Where is seth? Name: ".cyan + message.author.username);
 	}	
 	
 //erik
 	if(message.content == "!erik")
 	{
-		mybot.sendMessage(message, "http://i.imgur.com/3v6fZ7q.png");
-		console.log(funcFile.getDateTime() + " Where is erik? Name: ".cyan + message.author.name);
+		message.channel.send("http://i.imgur.com/3v6fZ7q.png");
+		console.log(funcFile.getDateTime() + " Where is erik? Name: ".cyan + message.author.username);
 	}
 	
 //garlic
 	if(message.content == "!garlic" || message.content == "!Garlic")
 	{
-		mybot.sendMessage(message, "http://i.imgur.com/Gz6nUbn.jpg");
-		console.log(funcFile.getDateTime() + " Garlic Bread memes? Name: ".cyan + message.author.name);
+		message.channel.send("http://i.imgur.com/Gz6nUbn.jpg");
+		console.log(funcFile.getDateTime() + " Garlic Bread memes? Name: ".cyan + message.author.username);
 	}
 	
+//reynart
+	if(message.content == "!reynart"){
+		message.channel.send("https://i.imgur.com/m8tLSF0.png");
+		console.log(funcFile.getDateTime() + " Where is Reynart? Name: ".cyan + message.author.username);
+	}
+
 //??? neger command
 	if(message.content === "???")
 	{
-		mybot.sendMessage(message, "http://i.imgur.com/zIEfIed.jpg")
-		console.log(funcFile.getDateTime() + " Black guys questioned ".cyan + "Name: ".cyan + message.author.name);
+		message.channel.send("http://i.imgur.com/zIEfIed.jpg")
+		console.log(funcFile.getDateTime() + " Black guys questioned ".cyan + "Name: ".cyan + message.author.username);
 	}
 	
 }

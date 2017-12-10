@@ -45,14 +45,12 @@ client.on('ready', () => {
   });
   
   client.on('message', message => {
-	if(message.author.bot) return;
-	
-	pet.pet(message, client, funcFile, jsonCount, jsonfile, mood);
-	dan.danPull(message, client, funcFile, whiteArrayId, blackArrayId);
+		if(message.author.bot && message.author.id != 389178140435546112) return;
+		
+		pet.pet(message, client, funcFile, jsonCount, jsonfile, mood);
+		dan.danPull(message, client, funcFile, whiteArrayId, blackArrayId);
+		meme.justMemes(message, client , funcFile);
 
-	if (message.content === 'pin') {
-	  message.channel.send("``pon!``");
-	}
   });
   
   client.on("guildCreate", guild => {
