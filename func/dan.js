@@ -218,7 +218,7 @@ exports.danPull = function(message, mybot, funcFile, whiteArrayId, blackArrayId)
 									w++;
 									
 									if(w > 5000){
-										msg.edit("``I could not find something cute (´•ω•̥`)``");
+										msg.edit("``I could not find something cute. (´•ω•̥`)``");
 										break reshuffleB;
 									}
 								}
