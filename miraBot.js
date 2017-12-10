@@ -51,6 +51,7 @@ client.on('ready', () => {
 		dan.danPull(message, client, funcFile, whiteArrayId, blackArrayId);
 		meme.justMemes(message, client , funcFile);
 		roll.roll(message, client, funcFile, mood);
+		quest.Eightball(message, client, funcFile);
 
   });
   

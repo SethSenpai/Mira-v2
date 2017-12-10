@@ -10,90 +10,90 @@ exports.Eightball = function(message, mybot, funcFile){
 		switch(ball){
 			
 			case 1:
-				mybot.reply(message, "It is certain");
+				message.reply("``It is certain``");
 			break;
 			
 			case 2:
-				mybot.reply(message, "It is decidedly so");
+				message.reply("``It is decidedly so``");
 			break;
 			
 			case 3:
-				mybot.reply(message, "Without a doubt");
+				message.reply("``Without a doubt``");
 			break;
 			
 			case 4:
-				mybot.reply(message, "Yes, definitely");
+				message.reply("``Yes, definitely``");
 			break;
 			
 			case 5:
-				mybot.reply(message, "You may rely on it");
+				message.reply("``You may rely on it``");
 			break;
 			
 			case 6:
-				mybot.reply(message, "As I see it, yes");
+				message.reply("``As I see it, yes``");
 			break;
 			
 			case 7:
-				mybot.reply(message, "Most likely");
+				message.reply("``Most likely``");
 			break;
 			
 			case 8:
-				mybot.reply(message, "Outlook good");
+				message.reply("``Outlook good``");
 			break;
 			
 			case 9:
-				mybot.reply(message, "Yes");
+				message.reply("``Yes``");
 			break;
 			
 			case 10:
-				mybot.reply(message, "Signs point to yes");
+				message.reply("``Signs point to yes``");
 			break;
 			
 			case 11:
-				mybot.reply(message, "Reply hazy try again");
+				message.reply("``Reply hazy try again``");
 			break;
 			
 			case 12:
-				mybot.reply(message, "Ask again later");
+				message.reply("``Ask again later``");
 			break;
 			
 			case 13:
-				mybot.reply(message, "Better not tell you now");
+				message.reply("``Better not tell you now``");
 			break;
 			
 			case 14:
-				mybot.reply(message, "Cannot predict now");
+				message.reply("``Cannot predict now``");
 			break;
 			
 			case 15:
-				mybot.reply(message, "Concentrate and ask again");
+				message.reply("``Concentrate and ask again``");
 			break;
 			
 			case 16:
-				mybot.reply(message, "Don't count on it");
+				message.reply("``Don't count on it``");
 			break;
 			
 			case 17:
-				mybot.reply(message, "My reply is no");
+				message.reply("``My reply is no``");
 			break;
 			
 			case 18:
-				mybot.reply(message, "My sources say no");
+				message.reply("``My sources say no``");
 			break;
 			
 			case 19:
-				mybot.reply(message, "Outlook not so good");
+				message.reply("``Outlook not so good``");
 			break;
 			
 			case 20:
-				mybot.reply(message, "Very doubtful");
+				message.reply("``Very doubtful``");
 			break;
 
 			default :
-				mybot.reply(message, "Vraag het niet aan mij, ik ben met pensioen.");
+				message.reply("``Vraag het niet aan mij, ik ben met pensioen.``");
 			break;
 			
 		}
-		console.log(funcFile.getDateTime() + " 8ball with reply: ".cyan + ball + " Name: ".cyan + message.author.name);
+		console.log(funcFile.getDateTime() + " 8ball with reply: ".cyan + ball + " Name: ".cyan + message.author.username);
 	}
 }
