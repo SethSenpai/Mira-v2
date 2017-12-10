@@ -42,6 +42,12 @@ client.on('message', message => {
 		roll.roll(message, client, funcFile, mood);
 		quest.Eightball(message, client, funcFile);
 
+		if(message.content === "!help")
+		{
+			message.channel.send(helpTextString);
+			console.log(funcFile.getDateTime() + " Help requested ".cyan + "Name: ".cyan + message.author.username);
+		}
+
   });
   
 client.on("guildCreate", guild => {
@@ -56,3 +62,13 @@ client.on("guildDelete", guild => {
   // Log our bot in
 
 client.login(loginObj.email);
+
+helpTextString = "I have several functions that you can use: \n " +
+"[!8ball] ask me a question. \n "+
+"[!pet] or [!pat] to pet me for being a good robot! \n "+
+"[!roll xdy] to have me roll some dice, example: !roll 2d6 \n "+
+"[!hentai tag] lets me post a random lewd picture if there is not tag specified, otherwise its a lewd picture with the tag specified. \n"+
+"[!moe tag] works the same way as its lewder counterpart but less lewd. (generally sfw) \n"+
+"There are also some private memes hidden in my programming, maybe you will find them, maybe not. \n"+
+"You can ask me to join a server by clicking this link: https://discordapp.com/oauth2/authorize?client_id=389178140435546112&scope=bot \n" +
+"I was made by @pimwing, send him a message if you have further questions about me!";
