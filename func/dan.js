@@ -54,8 +54,18 @@ exports.danPull = function(message, mybot, funcFile)
 									}
 									else
 									{
+										if(post.file_url.startsWith("https://")){
+										console.log("https format file");
+										msg.edit("``I found something, pervert (;¬_¬)`` "+post.file_url);
+
+										}
+										else
+										{
 										//mybot.sendMessage(message, "http://danbooru.donmai.us"+post.file_url);
+										console.log("non https format file")
 										msg.edit("``I found something, pervert (;¬_¬)`` http://danbooru.donmai.us"+post.file_url);
+										}
+
 										break reshuffleB;
 									}
 									
@@ -103,8 +113,17 @@ exports.danPull = function(message, mybot, funcFile)
 									}
 									else
 									{
+										if(post.file_url.startsWith("https://")){
+										console.log("https format file");
+										msg.edit("``I found something, pervert (;¬_¬)`` "+post.file_url);
+
+										}
+										else
+										{
 										//mybot.sendMessage(message, "http://danbooru.donmai.us"+post.file_url);
+										console.log("non https format file")
 										msg.edit("``I found something, pervert (;¬_¬)`` http://danbooru.donmai.us"+post.file_url);
+										}
 										break reshuffleB;
 									}
 									
@@ -169,8 +188,18 @@ exports.danPull = function(message, mybot, funcFile)
 									}
 									else
 									{
+										if(post.file_url.startsWith("https://")){
+										console.log("https format file");
+										msg.edit("``I found something cute! ヾ(´▽｀;)ゝ`` "+post.file_url);
+
+										}
+										else
+										{
 										//mybot.sendMessage(message, "http://danbooru.donmai.us"+post.file_url);
+										console.log("non https format file")
 										msg.edit("``I found something cute! ヾ(´▽｀;)ゝ`` http://danbooru.donmai.us"+post.file_url);
+										}
+										
 										break reshuffleB;
 									}
 									
@@ -210,8 +239,17 @@ exports.danPull = function(message, mybot, funcFile)
 									}
 									else
 									{
+										if(post.file_url.startsWith("https://")){
+										console.log("https format file");
+										msg.edit("``I found something cute! ヾ(´▽｀;)ゝ`` "+post.file_url);
+
+										}
+										else
+										{
 										//mybot.sendMessage(message, "http://danbooru.donmai.us"+post.file_url);
+										console.log("non https format file")
 										msg.edit("``I found something cute! ヾ(´▽｀;)ゝ`` http://danbooru.donmai.us"+post.file_url);
+										}
 										break reshuffleB;
 									}
 									
