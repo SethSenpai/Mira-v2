@@ -8,6 +8,7 @@ const Discord = require("discord.js");
 const readline = require('readline');
 const jsonfile = require('jsonfile');
 const consolecolors = require('consolecolors');
+const publicIp = require('public-ip');
 
 //FUNCTION FILES
 var funcFile = require('./func/remoteFunctions.js');
@@ -26,6 +27,26 @@ const loginObj = require('./data/login.json');
 const client = new Discord.Client();
 var helpTextString;
 var creatorID;
+var oldIP;
+
+setInterval(checkIP, 60*1000);
+
+function checkIP(){
+	publicIp.v4().then(ip => {
+				if(oldIP == null){
+					oldIP = ip;
+					console.log(funcFile.getDateTime() + " Ip noted: " + oldIP);
+				}
+				
+				if(oldIP != ip){
+				client.fetchUser(loginObj.creatorID)
+					.then(user => {user.send("I moved to a different house! ヾ(・ω・ｏ) ``"+ip+"``")});
+				console.log(funcFile.getDateTime() + " Ip changed: " + ip);
+				oldIP = ip;
+				}
+			});
+}
+
 
 client.on('ready', () => {
 	console.log(funcFile.getDateTime() + " I just woke up!" .green);
@@ -50,6 +71,14 @@ client.on('message', message => {
 		if(message.content === "!emp" && message.author.id == loginObj.creatorID){
 			console.log(funcFile.getDateTime() + " Crashing now! ".red);
 			let elegance = crashing[666];
+		}
+		
+		if(message.content === "!ip" && message.author.id == loginObj.creatorID){
+			publicIp.v4().then(ip => {
+				client.fetchUser(loginObj.creatorID)
+					.then(user => {user.send("This is where I live! ヾ(・ω・ｏ) ``"+ip+"``")});
+				console.log(funcFile.getDateTime() + " Ip requested: " + ip);
+			});
 		}
 
   });
